@@ -1,7 +1,14 @@
-import {Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Header = () => {
+ const [active, setActive] = useState(1);
+
+ const headerButtons = [
+  { id: 1, name: "Study", link: "/" },
+  { id: 2, name: "Word List", link: "/words"},
+ ];
+
  return (
   <header className="site-header">
    <div className="header-inner">
@@ -11,13 +18,18 @@ const Header = () => {
      </h1>
      <p className="tagline">Build and study your own flashcards</p>
     </Link>
+
     <nav className="site-nav">
-     <Link to="/" className="nav-link active">
-      Study
-     </Link>
-     <Link to="/words" className="nav-link">
-      Word List
-     </Link>
+     {headerButtons.map((button) => (
+      <Link
+       key={button.id}
+       to={button.link}
+       onClick={() => setActive(button.id)}
+       className={active === button.id ? "nav-link active" : "nav-link"}
+      >
+       {button.name}
+      </Link>
+     ))}
     </nav>
    </div>
   </header>
