@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import type { Word, WordStatus } from "../types/words";
+import type { Word, WordStatus } from "../../../types/types"
 
 const STORAGE_KEY = "words";
 const PAGE_SIZE = 5;
