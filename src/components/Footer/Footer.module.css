@@ -1,0 +1,23 @@
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #dee2e6;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.footer-inner a {
+  color: #94a3b8;
+}
+
+.footer-inner a:hover {
+  color: #14b8a6;
+  text-decoration: underline;
+}

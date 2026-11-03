@@ -1,75 +1,69 @@
-# React + TypeScript + Vite
+# CardForge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**CardForge** — это современное веб-приложение для создания собственных колод карточек (flashcards), управления словарным запасом и эффективного изучения иностранных слов с помощью интервального повторения и интерактивных тренировок.
 
-Currently, two official plugins are available:
+Проект разработан на связке **React + TypeScript** с использованием компонентного подхода и кастомных хуков.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## 🚀 Основные возможности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Управление словарем (Список слов):**
+  - Добавление, редактирование и удаление слов.
+  - Поддержка перевода и английского языка.
+  - Умная пагинация (по 5 слов на страницу).
+  - Интерактивный фильтр-статус прямо в шапке таблицы (*Все статусы*, *Учить*, *Выучено*).
+- **Интерактивные тренировки (Учить):**
+  - Режим карточек с плавной 3D-анимацией переворота.
+  - Анимированные свайпы при ответах (*«Знаю» / «Не знаю»*).
+  - Динамическая очередь: выученные карточки скрываются, а слова, требующие закрепления, возвращаются на повторение.
+  - Экран (*«Все карточки выучены!»*), когда активных слов не осталось.
+  - Кнопка полного сброса прогресса и очистки словаря.
+- **Сохранение данных:**
+  - Вся информация мгновенно сохраняется в `localStorage` браузера и не пропадает при перезагрузке страницы.
+- **Адаптивный дизайн:**
+  - Интерфейс корректно отображается как на десктопах, так и на мобильных устройствах.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Стек технологий
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React** (Функциональные компоненты, Хуки: `useState`, `useEffect`, `useMemo`)
+- **TypeScript** (Строгая типизация всех данных, интерфейсов и пропсов)
+- **React Router** (Навигация между страницами приложения)
+- **CSS3 / CSS Modules** (Flexbox, Grid, 3D-трансформации, кастомные псевдоэлементы)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📦 Установка и запуск
 
-```
+Для запуска проекта на вашем компьютере выполните следующие шаги:
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Клонируйте репозиторий:**
+   ```bash
+   git clone https://github.com/your-username/card-forge.git
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Перейдите в папку проекта:**
+   ```bash
+   cd card-forge
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. **Установите зависимости:**
+   ```bash
+   npm install
+   ```
 
-```
+4. **Запустите проект в режиме разработки (Dev Server):**
+   ```bash
+   npm run dev
+   ```
+
+5. Откройте в браузере ссылку, указанную в терминале (обычно `http://localhost:5173`).
+
+---
+
+## 💡 Архитектурные особенности
+
+- **Разделение ответственности (SoC):** Вся тяжелая логика вынесена в кастомные хуки (`useWords`, `useStudy`), благодаря чему компоненты отвечают исключительно за рендеринг интерфейса.
+- **Иммутабельность:** Изменение состояния списков и статусов происходит без мутации исходных данных (через `map`, `filter`, `spread`).
+- **TypeScript Type Guards:** Безопасное чтение и валидация данных из `localStorage` при инициализации приложения.

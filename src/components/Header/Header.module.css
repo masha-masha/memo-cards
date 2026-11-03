@@ -1,0 +1,56 @@
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #1e293b;
+  transform: skewX(-5deg);
+}
+
+.logo-accent {
+  color: #14b8a6;
+}
+
+.site-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #14b8a618;
+  color: #0d9488;
+  text-decoration: none;
+}

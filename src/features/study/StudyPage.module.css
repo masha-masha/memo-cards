@@ -1,0 +1,92 @@
+.site-main {
+  flex-grow: 1;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px;
+
+}
+
+.page-title {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.page-lead {
+  margin: 0 0 24px;
+  color: #64748b;
+  font-size: 0.925rem;
+  max-width: 680px;
+}
+
+.card-scene {
+  width: 100%;
+  max-width: 480px;
+  height: 260px;
+  margin: 30px auto;
+  perspective: 1000px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center
+}
+
+.btn,
+.btn-primary {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: #14b8a6;
+  color: #fff;
+}
+
+.btn:hover {
+  background: #0d9488;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.btn-danger:hover {
+  opacity: 0.85;
+}
+
+.btn-outline {
+  background: #fff;
+  border: 1px solid #ced4da;
+  color: #495057;
+}
+
+.btn-outline:hover {
+  background: #f8f9fa;
+}
+
+
+.reset-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+
+@media (max-width: 640px) {
+  .site-main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+}

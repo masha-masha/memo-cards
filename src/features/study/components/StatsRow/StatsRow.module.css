@@ -1,0 +1,36 @@
+.stats-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  flex: 1;
+  min-width: 100px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.stat-box .num {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stat-box .lbl {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.num-remaining {
+    color: #f59e0b;
+}
+.num-learned {
+    color: #14b8a6;
+}
+.num-total {
+ color: #6366f1;
+}
